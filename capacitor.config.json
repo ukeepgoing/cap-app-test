@@ -22,11 +22,11 @@
       "style": "DARK",
       "backgroundColor": "#ffffffff"
     },
-    LiveUpdates: {
-      appId: '10213650',
-      channel: 'Production',
-      autoUpdateMethod: 'background',
-      maxVersions: 2
+    "LiveUpdates": {
+      "appId": "10213650",
+      "channel": "Production",
+      "autoUpdateMethod": "background",
+      "maxVersions": 2
     }
   }
 }
