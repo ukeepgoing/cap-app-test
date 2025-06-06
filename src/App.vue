@@ -28,7 +28,7 @@ const onCheckUpdate = () => {
     <div class="" style="margin-top: 100px">
       <button @click="onCheckUpdate">点击检查更新</button>
       <div>结果：{{state.result}}</div>
-      <div class="">实时更新测试2</div>
+      <div class="">实时更新测试3</div>
     </div>
   </div>
 </template>
