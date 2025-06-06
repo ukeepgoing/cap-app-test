@@ -1,9 +1,33 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import * as LiveUpdates from "@capacitor/live-updates";
+import {reactive} from "vue";
+import {App} from "@capacitor/app";
+
+const state = reactive({
+  result: null
+})
+
+const initializeApp = async () => {
+  // Register event to fire each time user resumes the app
+  App.addListener('resume', async () => {
+    if (localStorage.shouldReloadApp === 'true') {
+      await LiveUpdates.reload();
+    }
+    else {
+      state.result = await LiveUpdates.sync();
+    }
+  });
+
+  // First sync on app load
+  state.result = await LiveUpdates.sync();
+}
+
 </script>
 
 <template>
   <div>
+    {{state.result}}
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
