@@ -1,0 +1,23 @@
+{
+  "name": "cap-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.3.0",
+    "@capacitor/core": "^7.3.0",
+    "@capacitor/ios": "^7.3.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.3.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "capacitor-resources": "^2.0.5",
+    "vite": "^6.3.5"
+  }
+}
