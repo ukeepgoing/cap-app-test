@@ -9,33 +9,25 @@ const state = reactive({
   result: null
 })
 
-const initializeApp = async () => {
-  // Register event to fire each time user resumes the app
-  App.addListener('resume', async () => {
-    StatusBar.setOverlaysWebView({ overlay: true });
-
-    if (localStorage.shouldReloadApp === 'true') {
-      await LiveUpdates.reload();
-    }
-    else {
-      state.result = await LiveUpdates.sync();
-    }
-  });
-
-  // First sync on app load
-  state.result = await LiveUpdates.sync();
-}
-
 onMounted(() => {
-  initializeApp();
-})
+
+});
+
+const onCheckUpdate = () => {
+  LiveUpdates.sync().then(result => {
+    state.result = result;
+  }).catch(error => {
+    state.result = error;
+  });
+}
 
 </script>
 
 <template>
   <div>
     <div class="">
-      更新检查结果为：{{state.result}}
+      <button @click="onCheckUpdate">点击检查更新</button>
+      <div>结果：{{state.result}}</div>
     </div>
   </div>
 </template>

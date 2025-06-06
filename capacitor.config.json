@@ -25,7 +25,7 @@
     "LiveUpdates": {
       "appId": "10213650",
       "channel": "Production",
-      "autoUpdateMethod": "background",
+      "autoUpdateMethod": "none",
       "maxVersions": 2
     }
   }
