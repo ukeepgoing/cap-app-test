@@ -1,8 +1,9 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
 import * as LiveUpdates from "@capacitor/live-updates";
-import {reactive} from "vue";
+import {onMounted, reactive} from "vue";
 import {App} from "@capacitor/app";
+import {StatusBar} from "@capacitor/status-bar";
 
 const state = reactive({
   result: null
@@ -11,6 +12,8 @@ const state = reactive({
 const initializeApp = async () => {
   // Register event to fire each time user resumes the app
   App.addListener('resume', async () => {
+    StatusBar.setOverlaysWebView({ overlay: true });
+
     if (localStorage.shouldReloadApp === 'true') {
       await LiveUpdates.reload();
     }
@@ -23,11 +26,17 @@ const initializeApp = async () => {
   state.result = await LiveUpdates.sync();
 }
 
+onMounted(() => {
+  initializeApp();
+})
+
 </script>
 
 <template>
   <div>
-    {{state.result}}
+    <div class="">
+      更新检查结果为：{{state.result}}
+    </div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
