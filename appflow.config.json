@@ -2,6 +2,7 @@
   "apps":
   [
     {
+      "appId": "dbfe0d71",
       "dependencyInstallCommand": "pnpm i"
     }
   ]
