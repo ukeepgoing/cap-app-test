@@ -1,9 +1,6 @@
 {
-  "apps":
-  [
-    {
-      "appId": "dbfe0d71",
-      "dependencyInstallCommand": "npm i pnpm -g && pnpm i"
-    }
-  ]
+  "apps": {
+    "appId": "dbfe0d71",
+    "dependencyInstallCommand": "npm i pnpm -g && pnpm i"
+  }
 }
