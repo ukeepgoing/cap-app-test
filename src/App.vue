@@ -14,6 +14,7 @@ onMounted(() => {
 });
 
 const onCheckUpdate = () => {
+
   LiveUpdates.sync().then(result => {
     state.result = result;
   }).catch(error => {

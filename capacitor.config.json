@@ -28,5 +28,8 @@
       "autoUpdateMethod": "none",
       "maxVersions": 2
     }
+  },
+  "android": {
+    "adjustMarginsForEdgeToEdge": "force"
   }
 }
