@@ -1,9 +1,0 @@
-{
-  "apps":
-  [
-    {
-      "appId": "dbfe0d71",
-      "dependencyInstallCommand": "yarn i"
-    }
-  ]
-}
