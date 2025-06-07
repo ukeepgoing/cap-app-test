@@ -3,7 +3,7 @@
   [
     {
       "appId": "dbfe0d71",
-      "dependencyInstallCommand": "pnpm i"
+      "dependencyInstallCommand": "npm i pnpm -g && pnpm i"
     }
   ]
 }
