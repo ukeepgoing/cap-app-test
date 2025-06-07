@@ -4,14 +4,18 @@ import * as LiveUpdates from "@capacitor/live-updates";
 import {onMounted, reactive} from "vue";
 import {App} from "@capacitor/app";
 import {StatusBar} from "@capacitor/status-bar";
-import {NavigationBar} from "@hugotomazi/capacitor-navigation-bar";
+import {AssetManager} from "@capawesome/capacitor-asset-manager";
+import {EdgeToEdge} from "@capawesome/capacitor-android-edge-to-edge-support";
 
 const state = reactive({
   result: null
 })
 
 onMounted(() => {
+  AssetManager.read({encoding: 'utf8', path: 'public'}).then(result => {
 
+  });
+  AssetManager.list({path: 'public'})
 });
 
 const onCheckUpdate = () => {
@@ -24,7 +28,7 @@ const onCheckUpdate = () => {
 }
 
 const onCheckUpdate1 = () => {
-  NavigationBar.hide();
+  EdgeToEdge.enable();
 }
 
 </script>
