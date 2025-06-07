@@ -4,6 +4,7 @@ import * as LiveUpdates from "@capacitor/live-updates";
 import {onMounted, reactive} from "vue";
 import {App} from "@capacitor/app";
 import {StatusBar} from "@capacitor/status-bar";
+import {NavigationBar} from "@hugotomazi/capacitor-navigation-bar";
 
 const state = reactive({
   result: null
@@ -14,12 +15,16 @@ onMounted(() => {
 });
 
 const onCheckUpdate = () => {
-
+  StatusBar.setOverlaysWebView({overlay: true});
   LiveUpdates.sync().then(result => {
     state.result = result;
   }).catch(error => {
     state.result = error;
   });
+}
+
+const onCheckUpdate1 = () => {
+  NavigationBar.hide();
 }
 
 </script>
@@ -28,6 +33,7 @@ const onCheckUpdate = () => {
   <div>
     <div class="" style="margin-top: 100px">
       <button @click="onCheckUpdate">点击检查更新</button>
+      <button @click="onCheckUpdate1">点击隐藏底部小黑条</button>
       <div>结果：{{state.result}}</div>
       <div class="">实时更新测试3</div>
     </div>
