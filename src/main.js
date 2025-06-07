@@ -8,4 +8,4 @@ import eruda from 'eruda'
 const vConsole = new VConsole()
 eruda.init()
 
-createApp(App).use(VConsole).mount('#app')
+createApp(App).mount('#app')

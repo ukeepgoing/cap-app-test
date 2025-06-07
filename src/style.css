@@ -1,19 +1,12 @@
 html, body, #app {
   width: 100vw;
-  height: calc(100vh + 100px);
+  height: 100vh;
   margin: 0;
   padding: 0;
-  background: rgba(0, 251, 218, 0.19);
 }
 
 
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  padding-bottom: env(safe-area-inset-bottom);
-  /* 兼容旧版 iOS */
-  padding-bottom: constant(safe-area-inset-bottom);
 }
