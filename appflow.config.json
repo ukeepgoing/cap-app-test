@@ -1,6 +1,6 @@
 {
   "apps": {
     "appId": "dbfe0d71",
-    "dependencyInstallCommand": "npm i pnpm -g && pnpm i"
+    "dependencyInstallCommand": "npm i yarn -g && yarn"
   }
 }
